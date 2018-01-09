@@ -1,0 +1,50 @@
+#form {
+	text-align: center;
+	height: 80%;
+}
+
+form {
+	display: grid;
+	width: 20%;
+	margin: 0 auto;
+	border: 1px solid black;
+	border-radius: 5px;
+	padding: 1%;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-areas: "search search search"
+											 "submit text new";
+	grid-column-gap: 1%;
+	grid-row-gap: 5%;
+	text-align: center;
+}
+
+#search {
+	grid-area: search;
+	border: 1px solid lightgray;
+	font-size: 1.3em;
+	border-radius: 2px;
+}
+
+#submit {
+	grid-area: submit;
+	background-color: lightgray;
+	border: none;
+	border-radius: 2px;
+	cursor: pointer;
+	font-size: 1.3em;
+}
+
+#text {
+	grid-area: text;
+	margin: 0;
+	font-size: 1.3em
+}
+
+#new_list {
+	grid-area: new;
+	text-decoration: none;
+	color: inherit;
+	background-color: lightgray;
+	font-size: 1.3em;
+	border-radius: 2px; 
+}

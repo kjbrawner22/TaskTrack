@@ -1,22 +1,42 @@
+html {
+	font-family: sans-serif;
+}
+
+body {
+	margin: 0;
+}
+
 .nav {
-	display: grid;
-	grid-template-columns: repeat(2, 1fr);
 	height: auto;
 	position: sticky;
 	top: 0;
-	background-color: rgba(255,255,255,.3);
+	background-color: black;
 }
 
 .nav-item {
+	display: inline-block;
 	text-align: center;
 	text-decoration: none;
-	color: inherit;
+	color: white;
+	padding-left: 1%;
+	padding-right: 1%;
 }
 
 .nav-item:hover {
-	color: rgba(0,0,0,.3);
+	color: black;
+	background-color: white;
 }
 
 .nav-item:focus {
 	outline: none;
+}
+
+.nav-item.title {
+	padding-left: 2%;
+	padding-right: 2%;
+}
+
+.nav-item.title:hover {
+	background-color: black;
+	color: white;
 }
