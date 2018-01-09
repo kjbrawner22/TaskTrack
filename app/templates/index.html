@@ -6,14 +6,17 @@
 
 {% block body %}
 <div id="form">
-	<form method="POST" action="{{ url_for('new_list') }}">
+	<form method="POST" action="">
 		{{ form.hidden_tag() }}
 		{{ form.search(placeholder=form.search.label.text) }}
 		{{ form.submit() }}
-		<p id="text">--OR--</p>
+		<p id="text">---OR---</p>
 		<a id="new_list" href="{{ url_for('new_list') }}">
 			New List
 		</a>
 	</form>
+	{% if no_result %}
+	<p class='red'>List not found.</p>
+	{% endif %}
 </div>
 {% endblock %}

@@ -1,13 +1,14 @@
 html {
 	font-family: sans-serif;
+	min-height: 100%;
 }
 
 body {
 	margin: 0;
+	height: 100%;
 }
 
 .nav {
-	height: auto;
 	position: sticky;
 	top: 0;
 	background-color: black;
