@@ -1,5 +1,5 @@
 from app import db
-from app.models import List
+from app.models import List,Task
 import string
 from random import choice
 
@@ -19,4 +19,17 @@ def list_exists(link):
 		return True
 	else:
 		return False
+
+def get_list_by_link(link):
+	l = List.query.filter_by(link=link).first()
+	if l is not None:
+		return l.id
+	else:
+		return None
+
+def add_task(text, do_by, priority, list_id):
+	t = Task(text=text, do_by=do_by,
+		       priority=priority, list_id=list_id)
+	db.session.add(t)
+	db.session.commit()
 	

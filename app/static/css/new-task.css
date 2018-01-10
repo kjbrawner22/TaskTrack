@@ -1,0 +1,59 @@
+input {
+	font-size: 1.3em;
+	border: 1px solid lightgray;
+	border-radius: 5px;
+}
+
+input:hover {
+	border: 1px solid black;
+}
+
+select {
+	font-size: 1.3em;
+	border: 1px solid lightgray;
+	border-radius: 5px;
+}
+
+select:hover {
+	border: 1px solid black;
+}
+
+#form-wrapper {
+	display: grid;
+	height: 80%;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: repeat(3, 1fr);
+	grid-template-areas: ". . ."
+											 ". form ."
+											 ". . .";
+}
+
+#form {
+	grid-area: form;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-template-areas: "text text"
+											 "date priority"
+											 "submit submit";
+	grid-column-gap: 5px;
+	grid-row-gap: 5%;
+	border: 1px solid black;
+	padding: 1%;
+}
+
+#text {
+	grid-area: text;
+}
+
+#do_by {
+	grid-area: date;
+	font-size: 1em;
+}
+
+#priority {
+	grid-area: priority;
+}
+
+#submit {
+	grid-area: submit;
+}

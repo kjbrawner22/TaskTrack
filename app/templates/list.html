@@ -1,9 +1,31 @@
 {% extends 'base.html' %}
 
 {% block head %}
+<script defer src="https://use.fontawesome.com/releases/v5.0.3/js/all.js"></script>
 <link href="{{ url_for('static', filename='css/list.css') }}" rel="stylesheet">
 {% endblock %}
 
 {% block body %}
-<h2>List: {{ link }}</h2>
+<div id="list-wrapper">
+	<div id="list-title">
+		<h2>
+			List ID(SAVE IT): {{ link }}
+			<a id="new-task" href="{{ url_for('new_task', link=link) }}"><i class="fas fa-plus-circle"></i> Add Task</a>
+		</h2>
+	</div>
+	<div id="tasks-wrapper">
+		{% for task in tasks %}
+		<div class="task-dates">
+			<p>Date Created: {{ task.timestamp }}</p>
+			<p>Do By: {{ task.do_by }}</p>
+		</div>
+		<div>
+			<p>{{ task.text }}</p>
+		</div>
+		<div>
+			<p>Priority: {{ task.priority }}</p>
+		</div>
+		{% endfor %}
+	</div>
+</div>
 {% endblock %}

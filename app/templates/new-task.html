@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<link href="{{ url_for('static', filename='css/new-task.css') }}" rel="stylesheet">
+{% endblock %}
+
+{% block body %}
+<div id="form-wrapper">
+	<div id="form">
+		{{ form.hidden_tag() }}
+		{{ form.text(placeholder=form.text.label.text) }}
+		{{ form.do_by(placeholder=form.do_by.format) }}
+		{{ form.priority() }}
+		{{ form.submit() }}
+	</div>
+</div>
+{% endblock %}
