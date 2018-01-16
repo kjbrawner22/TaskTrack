@@ -1,5 +1,6 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField,SubmitField,DateTimeField,SelectField
+from wtforms import StringField,SubmitField,SelectField,IntegerField
+from wtforms_components import DateField
 from wtforms.validators import DataRequired
 
 class SearchForm(FlaskForm):
@@ -8,7 +9,9 @@ class SearchForm(FlaskForm):
 
 class TaskForm(FlaskForm):
 	text = StringField('Task', validators=[DataRequired()])
-	do_by = DateTimeField('Do By', validators=[DataRequired()])
+	do_by_date = DateField('Do By Date')
+	do_by_time_h = IntegerField('Hour')
+	do_by_time_m = IntegerField('Minute')
 	priority = SelectField('Priority', 
 		                    choices=[
 		                      ('Priority', 'Priority'),

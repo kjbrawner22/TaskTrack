@@ -1,6 +1,7 @@
 from app import db
 from app.models import List,Task
 import string
+from datetime import datetime
 from random import choice
 
 def new_list_link(links):
@@ -21,15 +22,14 @@ def list_exists(link):
 		return False
 
 def get_list_by_link(link):
-	l = List.query.filter_by(link=link).first()
-	if l is not None:
-		return l.id
-	else:
-		return None
+	return List.query.filter_by(link=link).first()
 
-def add_task(text, do_by, priority, list_id):
+def add_task(text, do_by_date, hour, minute, priority, list):
+	do_by = datetime(day=do_by_date.day, month=do_by_date.month,
+									 year = do_by_date.year, hour=hour,
+									 minute=minute, second=0)
 	t = Task(text=text, do_by=do_by,
-		       priority=priority, list_id=list_id)
+		       priority=priority, list=list)
 	db.session.add(t)
 	db.session.commit()
 	

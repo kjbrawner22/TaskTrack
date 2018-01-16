@@ -6,12 +6,17 @@
 
 {% block body %}
 <div id="form-wrapper">
-	<div id="form">
+	<form id="form" action="" method="POST">
 		{{ form.hidden_tag() }}
 		{{ form.text(placeholder=form.text.label.text) }}
-		{{ form.do_by(placeholder=form.do_by.format) }}
+		<div id="date">
+			<p>Do By:</p>
+			{{ form.do_by_date() }}
+		</div>
+		{{ form.do_by_time_h(placeholder="Hour") }}
+		{{ form.do_by_time_m(placeholder="Minute") }}
 		{{ form.priority() }}
 		{{ form.submit() }}
-	</div>
+	</form>
 </div>
 {% endblock %}

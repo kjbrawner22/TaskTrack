@@ -1,5 +1,6 @@
 input {
 	font-size: 1.3em;
+	text-align: center;
 	border: 1px solid lightgray;
 	border-radius: 5px;
 }
@@ -22,8 +23,9 @@ select:hover {
 	display: grid;
 	height: 80%;
 	grid-template-columns: repeat(3, 1fr);
-	grid-template-rows: repeat(3, 1fr);
+	grid-template-rows: repeat(4, 1fr);
 	grid-template-areas: ". . ."
+											 ". form ."
 											 ". form ."
 											 ". . .";
 }
@@ -31,13 +33,14 @@ select:hover {
 #form {
 	grid-area: form;
 	display: grid;
-	grid-template-columns: repeat(2, 1fr);
-	grid-template-areas: "text text"
-											 "date priority"
-											 "submit submit";
-	grid-column-gap: 5px;
+	grid-template-columns: repeat(4, 1fr);
+	grid-template-areas: "text text text text"
+											 "date date time-h time-m"
+											 "priority priority submit submit";
 	grid-row-gap: 5%;
+	grid-column-gap: 1%;
 	border: 1px solid black;
+	border-radius: 5px;
 	padding: 1%;
 }
 
@@ -45,15 +48,36 @@ select:hover {
 	grid-area: text;
 }
 
-#do_by {
+#date {
 	grid-area: date;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	width: 100%;
+	text-align: center;
+	vertical-align: middle;
 	font-size: 1em;
+}
+
+#date p {
+	margin: auto;
+}
+
+#do_by_time_h {
+	grid-area: time-h;
+	width: 100%;
+}
+
+#do_by_time_m {
+	grid-area: time-m;
+	width: 100%;
 }
 
 #priority {
 	grid-area: priority;
+	width: 100%;
 }
 
 #submit {
 	grid-area: submit;
+	width: 100%;
 }

@@ -16,8 +16,9 @@
 	<div id="tasks-wrapper">
 		{% for task in tasks %}
 		<div class="task-dates">
-			<p>Date Created: {{ task.timestamp }}</p>
-			<p>Do By: {{ task.do_by }}</p>
+			<p>
+				Do By: {{ task.do_by.month }}/{{ task.do_by.day }}/{{ task.do_by.year }} {{ task.do_by.hour }}:{{ task.do_by.minute }}
+			</p>
 		</div>
 		<div>
 			<p>{{ task.text }}</p>
