@@ -1,7 +1,7 @@
 from app import app
 from app.forms import SearchForm,TaskForm
 from app.models import List,Task
-from app.utils import list_exists,new_list_link,add_task,get_list_by_link
+from app.utils import list_exists,new_list_link,add_task,get_list_by_link,set_colors
 from flask import render_template,redirect,url_for
 
 @app.route('/', methods=['GET','POST'])
@@ -56,6 +56,6 @@ def list(link):
 	if not list_exists(link):
 		return redirect(url_for('no_list', link=link))
 	title = "Task Track | List " + link
-	tasks = List.query.filter_by(link=link).first().tasks
+	tasks = List.query.filter_by(link=link).first().tasks.order_by(Task.do_by.asc())
 	return render_template('list.html', 
 		                     link=link, title=title, tasks=tasks)

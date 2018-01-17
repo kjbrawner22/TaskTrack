@@ -32,4 +32,14 @@ def add_task(text, do_by_date, hour, minute, priority, list):
 		       priority=priority, list=list)
 	db.session.add(t)
 	db.session.commit()
-	
+
+def set_colors(tasks):
+	for task in tasks:
+		if task.priority == "Low":
+			task.color = "green"
+		if task.priority == "Medium":
+			task.color = "yellow"
+		if task.priority == "Medium":
+			task.color = "red"
+	return tasks
+

@@ -23,7 +23,7 @@
 		<div>
 			<p>{{ task.text }}</p>
 		</div>
-		<div>
+		<div class="{{ task.priority.lower() }}">
 			<p>Priority: {{ task.priority }}</p>
 		</div>
 		{% endfor %}

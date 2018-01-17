@@ -26,6 +26,18 @@
 }
 
 #tasks-wrapper div {
-	border-bottom: 1px solid black;
-	border-top: 1px solid black
+	border: 1px solid black;
+	border-radius: 5px;
+}
+
+.high {
+	background-color: red;
+}
+
+.medium {
+	background-color: yellow;
+}
+
+.low {
+	background-color: green;
 }
